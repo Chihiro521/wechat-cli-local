@@ -15,8 +15,8 @@
 支持 `npm trust` 的 npm CLI（11.15.0 或更新版本）也可以运行以下命令；账号需启用双因素认证，可能弹出浏览器验证：
 
 ```powershell
-npm trust github wechat-cli-local-win32-x64 --repo Chihiro521/wechat-cli-local --file publish.yml --allow-publish --yes
-npm trust github wechat-cli-local --repo Chihiro521/wechat-cli-local --file publish.yml --allow-publish --yes
+npx --yes npm@11.15.0 trust github wechat-cli-local-win32-x64 --repo Chihiro521/wechat-cli-local --file publish.yml --allow-publish --yes
+npx --yes npm@11.15.0 trust github wechat-cli-local --repo Chihiro521/wechat-cli-local --file publish.yml --allow-publish --yes
 ```
 
 流水线使用 Node.js 24 和固定版本 npm，通过 OIDC 发包。GitHub 仓库无需配置长期 npm token。
