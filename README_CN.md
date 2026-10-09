@@ -5,6 +5,8 @@
 命令行查询、统计和导出本地微信数据，支持 JSON 输出。
 本仓库保留本地修改版，npm 独立使用 `wechat-cli-local` 包名。
 
+**[打开中文安装与使用页面](https://chihiro521.github.io/wechat-cli-local/)** · 三步安装、命令复制、使用示例与常见问题。
+
 ## 安装
 
 npm 包提供 Windows x64 独立程序，Node.js 22 或更新版本即可，无需安装 Python。
