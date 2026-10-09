@@ -29,7 +29,9 @@ def main():
 
     executable = output / "wechat-cli.exe"
     subprocess.check_call([str(executable), "--version"], cwd=ROOT)
-    subprocess.check_call([str(executable), "--help"], cwd=ROOT)
+    help_output = subprocess.check_output([str(executable), "--help"], cwd=ROOT).decode("utf-8")
+    if "微信" not in help_output or "new-messages" not in help_output:
+        raise SystemExit("Executable help output is incomplete.")
     print(f"Built and checked: {executable.name} ({executable.stat().st_size} bytes)")
 
 

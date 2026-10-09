@@ -55,7 +55,9 @@ def main():
             result = subprocess.check_output([node, str(launcher), "--version"], text=True)
             if result.strip() != f"wechat-cli, version {version}":
                 raise ValueError("Installed launcher reported an unexpected version.")
-            subprocess.check_call([node, str(launcher), "--help"])
+            help_output = subprocess.check_output([node, str(launcher), "--help"]).decode("utf-8")
+            if "微信" not in help_output or "new-messages" not in help_output:
+                raise ValueError("Installed launcher did not return complete UTF-8 help.")
             print("Installed tarballs passed launcher smoke tests.")
 
 
