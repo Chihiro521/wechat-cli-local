@@ -6,7 +6,7 @@
 
 ## 首次设置
 
-1. 注册 npm 账号并在本机执行 `npm login --registry=https://registry.npmjs.org/`。
+1. 注册 npm 账号、验证邮箱并启用账号 2FA，然后在本机执行 `npm login --registry=https://registry.npmjs.org/`。仅完成登录时，首次发布可能返回 `E403`，要求启用 2FA。
 2. 按 README 构建、打包并验证，在项目根目录执行 `python npm/scripts/publish.py` 完成首次发布。npm 可能要求浏览器验证。
 3. 对两个 npm 包分别配置 GitHub Actions Trusted Publisher：用户 `Chihiro521`、仓库 `wechat-cli-local`、工作流文件 `publish.yml`，允许 `npm publish`，环境名称留空。
 4. 配置后发布一个新版本标签，检查 GitHub Actions 的实际发包结果。首次 OIDC 发布需在创建配置的两天内完成。
