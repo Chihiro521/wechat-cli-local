@@ -1,6 +1,6 @@
 {
   "name": "wechat-cli-local-win32-x64",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Windows x64 executable for wechat-cli-local",
   "os": [
     "win32"

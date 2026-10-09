@@ -11,7 +11,7 @@ This distribution preserves local modifications and uses its own npm package nam
 
 The npm distribution supports Windows x64 and requires Node.js 22 or newer.
 It includes a standalone executable; Python is not required.
-After the first npm release:
+Install from npm:
 
 ```powershell
 npm install -g wechat-cli-local

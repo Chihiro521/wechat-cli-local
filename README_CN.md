@@ -8,7 +8,7 @@
 ## 安装
 
 npm 包提供 Windows x64 独立程序，Node.js 22 或更新版本即可，无需安装 Python。
-首次发布完成后安装：
+安装：
 
 ```powershell
 npm install -g wechat-cli-local
