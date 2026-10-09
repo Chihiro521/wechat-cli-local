@@ -1,0 +1,12 @@
+WeChat CLI Local
+
+This distribution contains modified code from WeChat CLI:
+https://github.com/huohuoer/wechat-cli
+(previously referenced as freestylefly/wechat-cli)
+
+WeChat CLI credits wechat-decrypt for its database decryption and parsing:
+https://github.com/ylytdeng/wechat-decrypt
+
+Local changes include Windows data directory detection, packaging,
+publication automation, and exclusion of local account/export data.
+Distributed under the Apache License, Version 2.0; see LICENSE.

@@ -1,0 +1,27 @@
+{
+  "name": "wechat-cli-local-win32-x64",
+  "version": "0.3.0",
+  "description": "Windows x64 executable for wechat-cli-local",
+  "os": [
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "files": [
+    "bin/wechat-cli.exe",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "directory": "npm/platforms/win32-x64",
+    "url": "git+https://github.com/Chihiro521/wechat-cli-local.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

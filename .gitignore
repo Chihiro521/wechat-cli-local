@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+
+# PyInstaller
+*.spec
+
+# npm platform binaries (published to npm, not git)
+npm/platforms/*/bin/
+npm/**/LICENSE
+npm/**/NOTICE
+npm/**/README.md
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific
+.claude/
+*.db
+*.db-wal
+*.db-shm
+
+# Sensitive data — NEVER commit
+*.json
+!pyproject.toml
+!npm/**/package.json
+!npm/**/package-lock.json
+
+# Local exports, account state, credentials and caches
+/artifacts/
+/image/
+/.wechat-cli/
+/exports/
+/decrypted/
+/decoded_images/
+/.local/
+.env
+.env.*
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+node_modules/
+*.tgz
+*.log
+
+# Temp files
+*.tmp
+*.bak

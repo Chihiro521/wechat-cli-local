@@ -1,0 +1,48 @@
+{
+  "name": "wechat-cli-local",
+  "version": "0.3.0",
+  "description": "Query and export local WeChat data from the command line (Windows x64)",
+  "bin": {
+    "wechat-cli": "bin/wechat-cli.js",
+    "wechat-cli-local": "bin/wechat-cli.js"
+  },
+  "files": [
+    "bin/",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "optionalDependencies": {
+    "wechat-cli-local-win32-x64": "0.3.0"
+  },
+  "os": [
+    "win32"
+  ],
+  "cpu": [
+    "x64"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "wechat",
+    "cli",
+    "wechat-cli",
+    "local",
+    "export"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "directory": "npm/wechat-cli",
+    "url": "git+https://github.com/Chihiro521/wechat-cli-local.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Chihiro521/wechat-cli-local/issues"
+  },
+  "homepage": "https://github.com/Chihiro521/wechat-cli-local#readme",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
