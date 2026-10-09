@@ -7,7 +7,7 @@ This distribution preserves local modifications and uses its own npm package nam
 
 [中文文档与完整命令示例](README_CN.md)
 
-[Chinese installation guide](https://chihiro521.github.io/wechat-cli-local/) — setup steps, copyable commands, usage examples and FAQs.
+[Chinese project website](https://chihiro521.github.io/wechat-cli-local/) — project features, an interactive command notebook, installation steps and FAQs.
 
 ## Install
 

@@ -5,7 +5,7 @@
 命令行查询、统计和导出本地微信数据，支持 JSON 输出。
 本仓库保留本地修改版，npm 独立使用 `wechat-cli-local` 包名。
 
-**[打开中文安装与使用页面](https://chihiro521.github.io/wechat-cli-local/)** · 三步安装、命令复制、使用示例与常见问题。
+**[打开中文项目介绍与安装页面](https://chihiro521.github.io/wechat-cli-local/)** · 项目功能、交互命令手册、三步安装与常见问题。
 
 ## 安装
 

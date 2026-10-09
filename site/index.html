@@ -3,25 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#167447">
-  <meta name="description" content="WeChat CLI Local 中文安装指南：在 Windows x64 上通过 npm 安装，初始化本地微信数据，查询消息、联系人、统计与导出。">
-  <title>WeChat CLI Local · 安装与使用</title>
+  <meta name="theme-color" content="#f7f1e3">
+  <meta name="description" content="WeChat CLI Local：用命令行查询、搜索、统计和导出本地微信数据。米白像素风项目主页，附 Windows npm 安装指南与命令示例。">
+  <title>WeChat CLI Local · 你的微信，命令行见</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./pixel-font.css">
   <link rel="stylesheet" href="./styles.css">
   <script src="./app.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#install">跳到安装步骤</a>
+  <svg class="svg-symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="icon-chat" viewBox="0 0 24 24"><path d="M4 2h16v2h2v14h-2v2H10v2H6v-4H2V4h2z" fill="currentColor"/><path d="M6 8h3v3H6zm9 0h3v3h-3z" fill="var(--paper)"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><path d="M6 2h10v2h2v2h2v10h-2v2h-2v2H6v-2H4v-2H2V6h2V4h2zm0 4v10h10V6zM18 18h4v4h-4z" fill="currentColor"/></symbol>
+    <symbol id="icon-file" viewBox="0 0 24 24"><path d="M4 2h12v2h2v2h2v16H4zm2 2v16h12V8h-4V4zm2 8h8v2H8zm0 4h6v2H8z" fill="currentColor"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M12 4h4v4h4v4h4v4h-4v4h-4v4h-4v-4h4v-4H0v-4h16V8h-4z" fill="currentColor"/></symbol>
+    <symbol id="icon-copy" viewBox="0 0 24 24"><path d="M8 2h14v16h-4v4H2V6h6zm2 2v2h8v10h2V4zM4 8v12h12V8z" fill="currentColor"/></symbol>
+  </svg>
+
   <header class="header">
     <div class="shell header-inner">
-      <a class="brand" href="#top" aria-label="WeChat CLI Local 首页">
-        <span class="brand-icon" aria-hidden="true">&gt;_</span>
-        <span>WeChat CLI <strong>Local</strong></span>
-      </a>
+      <a class="brand" href="#top" aria-label="WeChat CLI Local 首页"><svg aria-hidden="true"><use href="#icon-chat"/></svg><span>WeChat CLI<span class="brand-local">LOCAL</span></span></a>
       <nav aria-label="主导航">
-        <a href="#install">安装</a>
-        <a href="#commands">使用</a>
-        <a href="#faq">常见问题</a>
-        <a class="repo-link" href="https://github.com/Chihiro521/wechat-cli-local">GitHub <span aria-hidden="true">↗</span></a>
+        <a href="#about">项目介绍</a><a href="#commands">命令手册</a><a href="#install">安装</a>
+        <a class="nav-github" href="https://github.com/Chihiro521/wechat-cli-local">GitHub <span aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
@@ -29,122 +34,108 @@
   <main id="top">
     <section class="hero shell" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> 本地微信，命令行见。</p>
-        <h1 id="hero-title">三步安装，<br>开始查询<span>微信。</span></h1>
-        <p class="hero-description">把消息、联系人和会话带进终端。<br>查询、搜索、统计、导出，都从一条命令开始。</p>
+        <p class="eyebrow"><span class="tiny-square" aria-hidden="true"></span> 小小终端，大大用处。</p>
+        <h1 id="hero-title">你的微信，<br><span>命令行见。</span></h1>
+        <p class="hero-description">给本地微信数据，一个轻巧的命令行入口。<br>查消息、找联系人、看统计、做导出，<br class="desktop-break">把常用操作变成一条条顺手的命令。</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#install">开始安装 <span aria-hidden="true">↓</span></a>
-          <a class="button button-plain" href="https://github.com/Chihiro521/wechat-cli-local/blob/main/README_CN.md">阅读完整文档 <span aria-hidden="true">↗</span></a>
+          <a class="button button-primary" href="#install">开始安装 <svg aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+          <a class="button button-paper" href="https://github.com/Chihiro521/wechat-cli-local">查看源代码 <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="requirements" aria-label="运行要求">
-          <span>Windows x64</span><span>Node.js ≥ 22</span><span>无需 Python</span>
-        </div>
+        <div class="quick-install"><code>npm install -g wechat-cli-local</code><button type="button" class="icon-button" data-copy="npm install -g wechat-cli-local" aria-label="复制 npm 安装命令"><svg aria-hidden="true"><use href="#icon-copy"/></svg></button></div>
+        <p class="hero-note"><span aria-hidden="true">◆</span> Windows x64 · Node.js ≥ 22 · 无需 Python</p>
       </div>
 
-      <div class="terminal">
-        <div class="terminal-header">
-          <div class="window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
-          <span>PowerShell</span>
-          <span class="terminal-tag">安装命令</span>
-        </div>
-        <div class="terminal-body">
-          <p class="terminal-comment"># 01 安装 CLI</p>
-          <div class="terminal-line"><span class="prompt" aria-hidden="true">&gt;</span><code>npm install -g wechat-cli-local</code></div>
-          <p class="terminal-comment"># 02 确认安装</p>
-          <div class="terminal-line"><span class="prompt" aria-hidden="true">&gt;</span><code>wechat-cli --version</code></div>
-          <p class="terminal-comment"># 03 查看可用命令</p>
-          <div class="terminal-line"><span class="prompt" aria-hidden="true">&gt;</span><code>wechat-cli --help</code></div>
-        </div>
-        <div class="terminal-footer">
-          <span>复制到 PowerShell 中运行</span>
-          <button class="copy-button copy-on-dark" type="button" data-copy="npm install -g wechat-cli-local" aria-label="复制 npm 安装命令">复制安装命令 <span aria-hidden="true">⧉</span></button>
-        </div>
+      <div class="pixel-desk">
+        <div class="desk-label">YOUR LOCAL WORKSPACE <span aria-hidden="true">✦</span></div>
+        <svg class="desk-art" viewBox="0 0 480 352" role="img" aria-labelledby="desk-title" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg">
+          <title id="desk-title">米白色像素电脑，屏幕里有聊天气泡和命令行，旁边放着植物、软盘与一只小猫</title>
+          <path d="M14 288h452v6H14zM34 316h412v4H34z" fill="#d9cfb8"/>
+          <path d="M108 36h250v8h8v208h-8v8H108v-8h-8V44h8z" fill="#403e32"/>
+          <path d="M110 46h246v200H110z" fill="#ded5bd"/><path d="M118 54h230v180H118z" fill="#f7f1e3"/>
+          <path d="M132 68h202v140H132z" fill="#403e32"/><path d="M140 76h186v124H140z" fill="#66735b"/>
+          <path d="M148 84h170v8H148z" fill="#7f8c70"/>
+          <path d="M174 106h68v6h6v46h-6v6h-34v12h-12v-12h-22v-6h-6v-46h6z" fill="#e4e7c9"/>
+          <path d="M186 126h8v8h-8zm34 0h8v8h-8z" fill="#66735b"/>
+          <path d="M250 138h36v6h6v28h-6v6h-10v8h-8v-8h-18v-6h-6v-28h6z" fill="#a5bd83"/>
+          <path d="M257 151h5v5h-5zm20 0h5v5h-5z" fill="#403e32"/>
+          <path d="M152 182h4v4h4v4h-4v4h-4v-4h4v-4h-4zm17 10h24v4h-24z" fill="#e4e7c9"/>
+          <path d="M308 212h10v10h-10z" fill="#8b9d69"/><path d="M290 212h10v10h-10z" fill="#d6ba78"/>
+          <path d="M188 260h84v26h22v8H166v-8h22z" fill="#403e32"/><path d="M198 260h64v18h-64zM176 286h108v4H176z" fill="#c9bea2"/>
+          <path d="M120 300h222v6h8v20H112v-20h8z" fill="#403e32"/><path d="M120 308h222v12H120z" fill="#e8dfcb"/>
+          <path d="M132 308h8v5h-8zm16 0h8v5h-8zm16 0h8v5h-8zm16 0h8v5h-8zm16 0h8v5h-8zm16 0h8v5h-8zm16 0h8v5h-8zm16 0h8v5h-8zm16 0h8v5h-8zm16 0h8v5h-8zm16 0h8v5h-8zm16 0h20v5h-20z" fill="#a49b82"/>
+          <path d="M38 216h48v6h6v30h-6v22H38v-22h-6v-30h6z" fill="#403e32"/><path d="M40 224h44v22h-6v20H46v-20h-6z" fill="#dba57f"/>
+          <path d="M56 214v-44h8v44zm-20-38h20v8H44v12h-8zm28 10h24v8H76v10H64z" fill="#66735b"/>
+          <path d="M48 160h8v12h-8zm16-14h8v28h-8zm-32 16h8v12h-8zm46 6h10v12H78z" fill="#96a777"/>
+          <path d="M382 206h40v6h6v58h-46z" fill="#403e32"/><path d="M390 214h30v48h-30z" fill="#8b9d69"/><path d="M394 214h20v14h-20zM396 242h16v20h-16z" fill="#f7f1e3"/><path d="M402 248h8v8h-8z" fill="#d9cfb8"/>
+          <path d="M370 284h8v-38h8v8h8v-8h8v38h8v8h-40z" fill="#403e32"/><path d="M378 266h24v18h-24zM382 260h4v6h-4zm12 0h4v6h-4z" fill="#d6ba78"/><path d="M382 272h4v4h-4zm12 0h4v4h-4z" fill="#403e32"/><path d="M408 278h10v-18h6v24h-6v8h-10z" fill="#403e32"/>
+          <path d="M72 90h8V78h6v12h8v6h-8v12h-6V96h-8zM388 66h6V56h6v10h6v6h-6v10h-6V72h-6z" fill="#b5945c"/>
+          <path d="M42 118h4v4h-4zm380 18h4v4h-4zm-42 42h4v4h-4z" fill="#a49b82"/>
+        </svg>
+        <div class="desk-caption"><span class="tiny-square" aria-hidden="true"></span><span>LOCAL DATA. LITTLE COMMANDS.</span><span class="desk-level">LV. 01</span></div>
+        <span class="desk-sticker">HELLO,<br>LOCAL!</span>
       </div>
     </section>
 
-    <div class="capabilities shell" aria-label="工具功能">
-      <span><b aria-hidden="true">01</b> 消息与联系人查询</span>
-      <span><b aria-hidden="true">02</b> 会话统计与搜索</span>
-      <span><b aria-hidden="true">03</b> JSON、Markdown 与文本导出</span>
-    </div>
+    <div class="project-strip"><div class="shell"><span><b>01</b> 本地数据查询</span><span><b>02</b> JSON 输出</span><span><b>03</b> npm 一步安装</span><span><b>04</b> Apache-2.0 开源</span></div></div>
+
+    <section id="about" class="section shell" aria-labelledby="about-title">
+      <div class="section-heading"><div><p class="eyebrow">01 / ABOUT THE PROJECT</p><h2 id="about-title">让聊天记录，多一点用处。</h2></div><p>从日常查找，到整理和导出。<br>在终端里，接着做你想做的事。</p></div>
+      <div class="feature-grid">
+        <article class="feature"><div class="feature-top"><svg aria-hidden="true"><use href="#icon-chat"/></svg><span>QUERY / 01</span></div><h3>消息、联系人，一起查。</h3><p>查看最近会话与聊天记录，按昵称或备注寻找联系人，也可以查看群成员和收藏。</p><div class="feature-tags"><code>sessions</code><code>contacts</code><code>history</code></div></article>
+        <article class="feature"><div class="feature-top"><svg aria-hidden="true"><use href="#icon-search"/></svg><span>EXPLORE / 02</span></div><h3>搜关键词，看统计。</h3><p>在指定聊天中搜索关键词，结合时间范围查找消息，再用会话统计整理聊天信息。</p><div class="feature-tags"><code>search</code><code>stats</code><code>members</code></div></article>
+        <article class="feature"><div class="feature-top"><svg aria-hidden="true"><use href="#icon-file"/></svg><span>EXPORT / 03</span></div><h3>把记录，带到下一步。</h3><p>查询默认输出 JSON，便于继续处理；聊天记录可以导出为 Markdown 或文本文件。</p><div class="feature-tags"><code>JSON</code><code>Markdown</code><code>TXT</code></div></article>
+      </div>
+    </section>
+
+    <section id="commands" class="commands-section" aria-labelledby="commands-title">
+      <div class="shell command-layout">
+        <div class="command-intro"><p class="eyebrow">02 / THE COMMAND NOTEBOOK</p><h2 id="commands-title">一条命令，<br>一个小任务。</h2><p>翻翻这本命令手册。<br>选一个用途，复制后在 PowerShell 里运行。</p><a class="text-link" href="https://github.com/Chihiro521/wechat-cli-local/blob/main/README_CN.md#使用">查看全部命令 <span aria-hidden="true">↗</span></a><div class="pixel-note"><span aria-hidden="true">&gt;_</span><p>“示例群”是演示名称。<br>使用时换成你自己的联系人或群名。</p></div></div>
+        <div class="command-window">
+          <div class="window-title"><span class="window-mark" aria-hidden="true">■</span><span>command-notebook.ps1</span><span class="window-controls" aria-hidden="true">− □ ×</span></div>
+          <div class="command-tabs" role="tablist" aria-label="选择命令用途">
+            <button type="button" role="tab" id="tab-query" aria-selected="true" aria-controls="command-panel" data-command="query">01 查询</button>
+            <button type="button" role="tab" id="tab-search" aria-selected="false" aria-controls="command-panel" tabindex="-1" data-command="search">02 搜索</button>
+            <button type="button" role="tab" id="tab-stats" aria-selected="false" aria-controls="command-panel" tabindex="-1" data-command="stats">03 统计</button>
+            <button type="button" role="tab" id="tab-export" aria-selected="false" aria-controls="command-panel" tabindex="-1" data-command="export">04 导出</button>
+          </div>
+          <div id="command-panel" class="command-panel" role="tabpanel" aria-labelledby="tab-query" tabindex="0">
+            <span class="command-label" id="command-label">SESSIONS</span><h3 id="command-title">最近有哪些会话？</h3><p id="command-description">列出最近的 10 个会话，默认输出 JSON。</p>
+            <div class="notebook-code"><span class="code-prompt" aria-hidden="true">PS &gt;</span><pre><code id="command-code">wechat-cli sessions --limit 10</code></pre></div>
+            <div class="command-panel-footer"><span id="command-tip">用 --limit 调整返回数量。</span><button type="button" class="copy-button" id="command-copy" data-copy="wechat-cli sessions --limit 10" aria-label="复制当前示例命令">复制命令 <svg aria-hidden="true"><use href="#icon-copy"/></svg></button></div>
+          </div>
+          <div class="window-status"><span><i aria-hidden="true"></i> 示例命令</span><span>PowerShell / UTF-8</span></div>
+        </div>
+      </div>
+    </section>
 
     <section id="install" class="section shell" aria-labelledby="install-title">
-      <div class="section-heading">
-        <div><p class="eyebrow">GET STARTED</p><h2 id="install-title">从安装到第一条查询</h2></div>
-        <p>在 Windows x64 的 PowerShell 中完成。</p>
-      </div>
-
-      <div class="steps">
-        <article class="step">
-          <div class="step-number" aria-hidden="true">01</div>
-          <div class="step-content">
-            <h3>准备 Node.js</h3>
-            <p>需要 Node.js 22 或更新版本。先检查本机版本：</p>
-            <div class="code-block"><pre><code>node --version
-npm --version</code></pre><button class="copy-button" type="button" data-copy="node --version&#10;npm --version" aria-label="复制 Node.js 版本检查命令">复制 <span aria-hidden="true">⧉</span></button></div>
-            <p class="step-note">首次安装 Node.js？前往 <a href="https://nodejs.org/en/download">Node.js 官网下载 LTS 版本 <span aria-hidden="true">↗</span></a>，安装后重新打开 PowerShell。</p>
-          </div>
-        </article>
-        <article class="step">
-          <div class="step-number" aria-hidden="true">02</div>
-          <div class="step-content">
-            <h3>安装并确认 CLI</h3>
-            <p>npm 会安装启动器和 Windows 独立程序。</p>
-            <div class="code-block"><pre><code>npm install -g wechat-cli-local
+      <div class="section-heading"><div><p class="eyebrow">03 / PRESS START</p><h2 id="install-title">准备好？三步开始。</h2></div><span class="platform-label">WINDOWS x64</span></div>
+      <div class="install-grid">
+        <article class="step"><div class="step-top"><span class="step-number">01</span><span class="step-tag">PREPARE</span></div><h3>准备 Node.js</h3><p>需要 Node.js 22 或更新版本。先检查本机版本：</p><div class="code-block"><pre><code>node --version
+npm --version</code></pre><button type="button" class="icon-button" data-copy="node --version&#10;npm --version" aria-label="复制 Node.js 版本检查命令"><svg aria-hidden="true"><use href="#icon-copy"/></svg></button></div><p class="step-note">首次安装？前往 <a href="https://nodejs.org/en/download">Node.js 官网下载 LTS ↗</a>，安装后重新打开 PowerShell。</p></article>
+        <article class="step step-highlight"><div class="step-top"><span class="step-number">02</span><span class="step-tag">INSTALL</span></div><h3>安装 CLI</h3><p>安装启动器与 Windows 独立程序，然后确认安装：</p><div class="code-block"><pre><code>npm install -g wechat-cli-local
 wechat-cli --version
-wechat-cli --help</code></pre><button class="copy-button" type="button" data-copy="npm install -g wechat-cli-local&#10;wechat-cli --version&#10;wechat-cli --help" aria-label="复制 CLI 安装与验证命令">复制 <span aria-hidden="true">⧉</span></button></div>
-            <p class="step-note">npm 包名是 <code>wechat-cli-local</code>。安装后，<code>wechat-cli</code> 和 <code>wechat-cli-local</code> 两个命令都可以使用。</p>
-          </div>
-        </article>
-        <article class="step">
-          <div class="step-number" aria-hidden="true">03</div>
-          <div class="step-content">
-            <h3>初始化，开始查询</h3>
-            <p>先启动并登录本机微信，再初始化数据目录和读取配置。需要进程读取权限时，可在管理员 PowerShell 中执行。</p>
-            <div class="code-block"><pre><code>wechat-cli init
-wechat-cli sessions --limit 10</code></pre><button class="copy-button" type="button" data-copy="wechat-cli init&#10;wechat-cli sessions --limit 10" aria-label="复制初始化和首次查询命令">复制 <span aria-hidden="true">⧉</span></button></div>
-            <p class="step-note">初始化后，配置保存在用户目录 <code>~/.wechat-cli/</code>。查询默认输出 JSON，方便后续处理。</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="commands" class="section commands-section" aria-labelledby="commands-title">
-      <div class="shell">
-        <div class="section-heading">
-          <div><p class="eyebrow">EVERYDAY COMMANDS</p><h2 id="commands-title">装好之后，可以这样用</h2></div>
-          <a class="text-link" href="https://github.com/Chihiro521/wechat-cli-local/blob/main/README_CN.md#使用">全部命令与参数 <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="command-grid">
-          <article class="command-card"><span class="command-label">联系人</span><h3>找到想聊的人</h3><div class="code-block"><pre><code>wechat-cli contacts --query "张三"</code></pre><button class="copy-button" type="button" data-copy='wechat-cli contacts --query "张三"' aria-label="复制联系人查询示例">复制</button></div></article>
-          <article class="command-card"><span class="command-label">聊天记录</span><h3>查看最近的消息</h3><div class="code-block"><pre><code>wechat-cli history "示例群" --limit 50</code></pre><button class="copy-button" type="button" data-copy='wechat-cli history "示例群" --limit 50' aria-label="复制聊天记录查询示例">复制</button></div></article>
-          <article class="command-card"><span class="command-label">搜索</span><h3>从聊天里找关键词</h3><div class="code-block"><pre><code>wechat-cli search "关键词" --chat "示例群"</code></pre><button class="copy-button" type="button" data-copy='wechat-cli search "关键词" --chat "示例群"' aria-label="复制消息搜索示例">复制</button></div></article>
-          <article class="command-card"><span class="command-label">导出</span><h3>保存为 Markdown</h3><div class="code-block"><pre><code>wechat-cli export "示例群" --format markdown --output "example.md"</code></pre><button class="copy-button" type="button" data-copy='wechat-cli export "示例群" --format markdown --output "example.md"' aria-label="复制 Markdown 导出示例">复制</button></div></article>
-        </div>
-        <p class="example-note">“张三”“示例群”是演示名称，运行时替换成你自己的联系人或群名。更多参数可运行 <code>wechat-cli &lt;命令&gt; --help</code> 查看。</p>
+wechat-cli --help</code></pre><button type="button" class="icon-button" data-copy="npm install -g wechat-cli-local&#10;wechat-cli --version&#10;wechat-cli --help" aria-label="复制 CLI 安装与验证命令"><svg aria-hidden="true"><use href="#icon-copy"/></svg></button></div><p class="step-note">包名是 <code>wechat-cli-local</code>；<code>wechat-cli</code> 与 <code>wechat-cli-local</code> 两个命令都能使用。</p></article>
+        <article class="step"><div class="step-top"><span class="step-number">03</span><span class="step-tag">LET'S GO</span></div><h3>初始化，开始查询</h3><p>先启动并登录本机微信，再初始化读取配置：</p><div class="code-block"><pre><code>wechat-cli init
+wechat-cli sessions --limit 10</code></pre><button type="button" class="icon-button" data-copy="wechat-cli init&#10;wechat-cli sessions --limit 10" aria-label="复制初始化和首次查询命令"><svg aria-hidden="true"><use href="#icon-copy"/></svg></button></div><p class="step-note">需要进程读取权限时，可在管理员 PowerShell 中执行。配置位于 <code>~/.wechat-cli/</code>。</p></article>
       </div>
     </section>
 
     <section id="faq" class="section shell faq-layout" aria-labelledby="faq-title">
-      <div><p class="eyebrow">GOOD TO KNOW</p><h2 id="faq-title">安装小贴士</h2><p class="faq-intro">从第一次运行，到日常更新。</p><a class="text-link" href="https://github.com/Chihiro521/wechat-cli-local/issues">反馈问题 <span aria-hidden="true">↗</span></a></div>
+      <div class="faq-heading"><p class="eyebrow">04 / A LITTLE HELP</p><h2 id="faq-title">再补几个<br>小贴士。</h2><p>第一次运行、日常更新，<br>常用的答案放在这里。</p><a class="text-link" href="https://github.com/Chihiro521/wechat-cli-local/issues">到 GitHub 反馈问题 ↗</a></div>
       <div class="faq-list">
-        <details open><summary>提示找不到 wechat-cli 命令？</summary><div class="faq-answer"><p>安装后重新打开终端再试。运行 <code>npm prefix -g</code> 查看全局安装目录，确认该目录在 Windows 的 PATH 中。也可以尝试别名 <code>wechat-cli-local --help</code>。</p></div></details>
-        <details><summary>初始化时，如何指定微信数据库目录？</summary><div class="faq-answer"><p>用 <code>--db-dir</code> 指定账号下的 <code>db_storage</code> 目录。下面是占位路径：</p><div class="code-block"><pre><code>wechat-cli init --db-dir "D:\WeChatData\xwechat_files\wxid_example\db_storage"</code></pre><button class="copy-button" type="button" data-copy='wechat-cli init --db-dir "D:\WeChatData\xwechat_files\wxid_example\db_storage"' aria-label="复制指定数据库目录示例">复制</button></div></div></details>
-        <details><summary>如何更新或卸载？</summary><div class="faq-answer"><p>更新到 npm 的最新发行版：</p><div class="code-block"><pre><code>npm update -g wechat-cli-local</code></pre><button class="copy-button" type="button" data-copy="npm update -g wechat-cli-local" aria-label="复制更新命令">复制</button></div><p>卸载 CLI：<code>npm uninstall -g wechat-cli-local</code>。</p></div></details>
-        <details><summary>支持哪些平台？需要 Python 吗？</summary><div class="faq-answer"><p>当前 npm 发行版面向 Windows x64，包含独立可执行程序，运行时需要 Node.js 22 或更新版本。Python 源码安装方式见 <a href="https://github.com/Chihiro521/wechat-cli-local/blob/main/README_CN.md#安装">仓库文档</a>。</p></div></details>
+        <details open><summary><span>01</span> 提示找不到 wechat-cli 命令？</summary><div class="faq-answer"><p>安装后重新打开终端再试。运行 <code>npm prefix -g</code> 查看全局安装目录，确认该目录在 Windows 的 PATH 中。也可以尝试别名 <code>wechat-cli-local --help</code>。</p></div></details>
+        <details><summary><span>02</span> 如何指定微信数据库目录？</summary><div class="faq-answer"><p>用 <code>--db-dir</code> 指定账号下的 <code>db_storage</code> 目录。下面是占位路径：</p><div class="code-block"><pre><code>wechat-cli init --db-dir "D:\WeChatData\xwechat_files\wxid_example\db_storage"</code></pre><button type="button" class="icon-button" data-copy='wechat-cli init --db-dir "D:\WeChatData\xwechat_files\wxid_example\db_storage"' aria-label="复制指定数据库目录示例"><svg aria-hidden="true"><use href="#icon-copy"/></svg></button></div></div></details>
+        <details><summary><span>03</span> 如何更新或卸载？</summary><div class="faq-answer"><p>更新到 npm 的最新发行版：</p><div class="code-block"><pre><code>npm update -g wechat-cli-local</code></pre><button type="button" class="icon-button" data-copy="npm update -g wechat-cli-local" aria-label="复制更新命令"><svg aria-hidden="true"><use href="#icon-copy"/></svg></button></div><p>卸载 CLI：<code>npm uninstall -g wechat-cli-local</code>。</p></div></details>
+        <details><summary><span>04</span> 支持哪些平台？需要 Python 吗？</summary><div class="faq-answer"><p>当前 npm 发行版支持 Windows x64，包含独立可执行程序；运行时需要 Node.js 22 或更新版本，无需安装 Python。Python 源码安装方式见 <a href="https://github.com/Chihiro521/wechat-cli-local/blob/main/README_CN.md#安装">仓库文档</a>。</p></div></details>
+        <details><summary><span>05</span> 还能在哪里了解这个项目？</summary><div class="faq-answer"><p><a href="https://github.com/Chihiro521/wechat-cli-local/blob/main/README_CN.md">中文文档</a>包含完整命令和构建说明；<a href="https://www.npmjs.com/package/wechat-cli-local">npm 页面</a>提供发行版本；源代码与更新记录可以在 <a href="https://github.com/Chihiro521/wechat-cli-local">GitHub 仓库</a>查看。</p></div></details>
       </div>
     </section>
 
-    <section class="closing shell" aria-label="开始使用">
-      <div><p class="eyebrow">READY WHEN YOU ARE</p><h2>让第一条命令，<br>从这里开始。</h2></div>
-      <button class="button button-primary" type="button" data-copy="npm install -g wechat-cli-local" aria-label="复制 npm 安装命令">复制安装命令 <span aria-hidden="true">⧉</span></button>
-    </section>
+    <section class="closing shell" aria-label="开始使用"><div class="closing-decoration" aria-hidden="true">&gt;_</div><div><p class="eyebrow">A SMALL TOOL FOR YOUR EVERYDAY.</p><h2>下一条命令，从这里开始。</h2></div><button type="button" class="button button-primary" data-copy="npm install -g wechat-cli-local" aria-label="复制 npm 安装命令">复制安装命令 <svg aria-hidden="true"><use href="#icon-copy"/></svg></button></section>
   </main>
 
-  <footer class="shell footer">
-    <span>WeChat CLI Local · 本地微信数据查询工具</span>
-    <div><a href="https://www.npmjs.com/package/wechat-cli-local">npm</a><a href="https://github.com/Chihiro521/wechat-cli-local">源代码</a><a href="https://github.com/Chihiro521/wechat-cli-local/blob/main/NOTICE">来源与署名</a><a href="https://github.com/Chihiro521/wechat-cli-local/blob/main/LICENSE">Apache-2.0</a></div>
-  </footer>
+  <footer class="shell footer"><div><a class="footer-brand" href="#top">WeChat CLI Local</a><p>本地微信数据查询工具 · 小小终端，大大用处。</p></div><div class="footer-right"><div class="footer-links"><a href="https://www.npmjs.com/package/wechat-cli-local">npm ↗</a><a href="https://github.com/Chihiro521/wechat-cli-local">GitHub ↗</a><a href="https://github.com/Chihiro521/wechat-cli-local/blob/main/NOTICE">来源与署名</a><a href="https://github.com/Chihiro521/wechat-cli-local/blob/main/LICENSE">Apache-2.0</a></div><p>像素字体：<a href="https://github.com/TakWolf/fusion-pixel-font">Fusion Pixel Font</a> · <a href="./FONT-LICENSE.txt">OFL-1.1</a></p></div></footer>
   <div class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
 </body>
 </html>
